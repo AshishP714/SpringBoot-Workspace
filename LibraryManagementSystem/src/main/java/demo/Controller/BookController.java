@@ -1,47 +1,22 @@
 package demo.Controller;
 
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import demo.Entity.Books;
-import demo.Repository.BookRepo;
+import demo.service.BookService;
 
-@Controller
+@RestController
+@RequestMapping("Books")
 public class BookController {
 	
-	@Autowired
-	BookRepo br;
+	public BookService service;
 	
-	
-	@GetMapping("/book-form")
-	public String getBookForm() {
-		
-		return "book-form";
+	@PostMapping("add")
+	public String insertBooks(@RequestBody Books books) {
+		service.insertBook(books);
+		return "Books added";
 	}
-	
-	@GetMapping("/search")
-	public String searchBook(@RequestParam Integer id, Model model) {
-		
-		
-		Optional<Books> op = br.findById(id);
-		
-		if(op.isPresent()) {
-		Books book=	op.get();
-		model.addAttribute("book" ,book);
-		}
-		
-		else {
-			model.addAttribute("msg" , "book not found");
-			
-			
-		}
-		
-		return "book-form";
-	}
-
 }
