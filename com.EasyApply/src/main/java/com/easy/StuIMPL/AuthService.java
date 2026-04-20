@@ -16,7 +16,6 @@ public class AuthService {
 	@Autowired
 	public StudentRepository repo; 
 	
-	
 	   @Autowired
 	    private AuthenticationManager authenticationManager;
 	   
@@ -36,10 +35,4 @@ public class AuthService {
 	            return "Login Failed";
 	        }
 	    }
-		   
-	   
-	
-	
-	
-
 }
