@@ -1,4 +1,4 @@
-	package com.easy.Security;
+package com.easy.Security;
 
 import java.util.ArrayList;
 
@@ -7,15 +7,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
 import com.easy.Entity.StuRegister;
 import com.easy.StudentRepository.StudentRepository;
 
-
 @Service
 public class CutomerDetailsService implements UserDetailsService {
-
-	
 	
 	@Autowired
 	public StudentRepository repo; 
@@ -28,7 +24,6 @@ public class CutomerDetailsService implements UserDetailsService {
 		 return new org.springframework.security.core.userdetails.User(
 				 stu.getEmail(),
 				 stu.getPassword(),
-	                new ArrayList<>());
+	            new ArrayList<>());
 	}
-
 }
