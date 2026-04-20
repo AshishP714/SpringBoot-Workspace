@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class Exception_handling {
 
-	
-	
-	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<Map<String, String>> handleValidationErrors
 	(MethodArgumentNotValidException ex) {
@@ -22,11 +19,6 @@ public class Exception_handling {
 		ex.getBindingResult().getFieldErrors().forEach(error -> {
 		    errors.put(error.getField(), error.getDefaultMessage());
 		});
-		return  ResponseEntity.badRequest().body(errors);
-		
-		
-		
-		 	
-		
+		return  ResponseEntity.badRequest().body(errors);		
 	}
 }
