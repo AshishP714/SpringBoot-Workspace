@@ -47,37 +47,6 @@ public class Config {
     }
 
     // ================= SECURITY FILTER CHAIN =================
-//    @Bean
-//    public SecurityFilterChain filterchain(HttpSecurity http) throws Exception {
-//
-//        http
-//            .csrf(csrf -> csrf.disable())
-//            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-//            .authenticationProvider(authprovider())
-//            .authorizeHttpRequests(auth -> auth
-//                .requestMatchers("/api/register", "/api/auth/login").permitAll()
-//                .anyRequest().authenticated()
-//            );
-//
-//        return http.build();
-//    }
-    
-//    @Bean
-//    public SecurityFilterChain filterchain(HttpSecurity http) throws Exception {
-//
-//        http
-//            .csrf(csrf -> csrf.disable())
-//            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-//            .sessionManagement(session -> 
-//                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//            )
-//            .authorizeHttpRequests(auth -> auth
-//                .requestMatchers("/api/register", "/api/auth/login").permitAll()
-//                .anyRequest().authenticated()
-//            );
-//
-//        return http.build();
-//    }
     
     @Bean
     public SecurityFilterChain filterchain(HttpSecurity http) throws Exception {
