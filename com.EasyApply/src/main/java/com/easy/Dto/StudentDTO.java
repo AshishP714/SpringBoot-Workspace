@@ -1,6 +1,5 @@
 package com.easy.Dto;
 
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -11,15 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class StudentDTO {
 	
-	
-	  @NotBlank(message = "Name is required")
+	@NotBlank(message = "Name is required")
     private String name;
 	  
 	  @Email(message = "Invalid email format")
-	    @NotBlank(message = "Email is required")
-    private String email;
+	  @NotBlank(message = "Email is required")
+   	 private String email;
     
-
 	    @NotBlank(message = "Phone is required")
 	    @Size(min = 10, max = 10, message = "Phone must be 10 digits")
     private String phone;
@@ -31,7 +28,6 @@ public class StudentDTO {
 	    @NotBlank(message = "College is required")
     private String college;
     
-
     @NotBlank(message = "Degree is required")
     private String degree;
     
@@ -39,9 +35,4 @@ public class StudentDTO {
     private String year;
     
     private String skills;
-    
-    
-    
-    
-
 }
